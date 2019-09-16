@@ -1,14 +1,37 @@
-function Friends ( name, profession, gender, age, interests) {
-    this.friends = []
-    this.name = name
-    this.profession = profession
-    this.gender = gender
-    this.age = age
-    this.interests = interests
-    this.list = function(){
-        console.log(`${name} is a ${profession} , they are a ${age} year old ${gender} and intersted in ${interests}`);
+var friendsList = [
+    {
+        "name" : "Douglas",
+        "photo": "http:// insert picture",
+        "scores": [
+            2,
+            1,
+            3,
+            1,
+            2,
+            3,
+            3,
+            3,
+            3,
+            
+        ]
+    },
 
-    }
-}
+    {
+        "name": "Katherine",
+        "photo": "http:// insert pic",
+        "scores": [
+            1,
+            1,
+            1,
+            3,
+            3,
+            2,
+            3,
+            2,
+            2,
+            1,
+        ]
+    },
 
-var friend1 = new Friend ("Candy", "Dancer", "Male", "23", "Theatre, Fine Dining, and Golf ");
+];
+module.exports = friendsList;

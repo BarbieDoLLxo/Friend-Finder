@@ -1,20 +1,45 @@
-var express = require("express");
-var http = require("http");
-require("./routing/htmlRoutes")(app);
+var friends = require("../data/friends");
+module.exports = function(app) {
 
-var app = express();
+    app.get("/api/friends", function(req, res) {
+         res.json(friends);
+    });
 
-app.get("/api/friends", function(req, res) {
-    return res.json(friends);
+    app.post("/api/friends", function(req, res) {
+        var results = req.body.scores;
+        console.log(req.body);
+
+        var bestMatch =[];
+        var scoreDif = 0;
+
+        var responseData = {
+            newUser: req.body,
+            bestMatch: null
+        };
+        for (var i =0; i < friends.length; i++) {
+            dif += Math.abs(friends[i].scores[j] - results[j]);
+        }
+if (i === 0 || dif <  scoreDif) {
+    responseData.bestMatch = friends[i];
+    scoreDif = dif;
+}
+
+
+res.join(responseData);
 });
+};
 
-app.get("/api/friends/: friends", function(req, res) {
-    var chosen = req.params.friends;
-    console.log(chosen);
+
+
+
+
+
+
 for (var i = 0; i < friends.length; i++) {
 if (chosen === friends[i].routeName) {
-    return res.json(friends[i]);
+     res.json(friends[i]);
 }
+
 }
-return res.json(false);
-});
+
+res.json(responseData);
