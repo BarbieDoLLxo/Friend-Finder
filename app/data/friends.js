@@ -2,7 +2,7 @@ var friendsList = [
     {
         "name" : "Douglas",
         "photo": "http:// insert picture",
-        "scores": [
+        "": [
             2,
             1,
             3,
